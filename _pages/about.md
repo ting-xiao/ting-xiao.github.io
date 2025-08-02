@@ -6,7 +6,7 @@ subtitle: <a href='#'>University of Copenhagen</a>, 1353 Copenhagen, Denmark.
 
 profile:
   align: right
-  image: TingXiao1.jpg
+  image: TingXiao1-1.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p> </p>
