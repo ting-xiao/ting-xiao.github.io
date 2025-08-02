@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ting-xiao.github.io/al-folio/sitemap.xml
+Sitemap: https://ting-xiao.github.io/sitemap.xml
