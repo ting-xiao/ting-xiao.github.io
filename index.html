@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ting Xiao is a PhD Fellow in Sociology at the University of Copenhagen studying knowledge production, innovation, and scientific inequality"
+    />
+    <meta name="author" content="Ting Xiao" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#12344d" />
+
+    <title>Ting Xiao - Science of Science &amp; Innovation</title>
+
+    <!-- A small built-in favicon, so the repository has no external dependencies. -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2312344d'/%3E%3Cpath d='M13 17h38v8H36v25h-9V25H13z' fill='%23f7f8f5'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .portrait-column {
+        width: min(100%, 23rem);
+        justify-self: end;
+      }
+
+      .portrait-column .portrait-card {
+        width: 100%;
+        justify-self: auto;
+      }
+
+      .profile-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        margin-top: 1.15rem;
+      }
+
+      .profile-link {
+        display: grid;
+        width: 2.7rem;
+        height: 2.7rem;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: var(--paper-strong);
+        color: var(--accent);
+        text-decoration: none;
+        transition:
+          border-color 150ms ease,
+          background-color 150ms ease,
+          color 150ms ease,
+          transform 150ms ease;
+      }
+
+      .profile-link svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: currentColor;
+      }
+
+      .profile-link:hover {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: var(--paper-strong);
+        transform: translateY(-2px);
+      }
+
+      [data-theme="dark"] .profile-link:hover {
+        color: #10212b;
+      }
+
+      /* Research imagery: one responsive landscape image for each research stream. */
+      .stream .stream-number {
+        margin-bottom: 1.1rem;
+      }
+
+      .stream-image {
+        aspect-ratio: 16 / 10;
+        margin: 0 0 1.55rem;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: var(--paper-strong);
+      }
+
+      .stream-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 350ms ease;
+      }
+
+      .stream:hover .stream-image img {
+        transform: scale(1.025);
+      }
+
+      .stream-image-animated img {
+        object-fit: contain;
+      }
+
+      .stream:hover .stream-image-animated img {
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .stream-image img {
+          transition: none;
+        }
+
+        .stream:hover .stream-image img {
+          transform: none;
+        }
+      }
+
+      /* Collaborators: replace each placeholder with an <img> when portraits are ready. */
+      .collaborators-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: clamp(1.25rem, 3vw, 3rem);
+        padding-top: 0.5rem;
+      }
+
+      .collaborator-card {
+        text-align: center;
+      }
+
+      .collaborator-avatar {
+        display: grid;
+        place-items: center;
+        width: min(100%, 9.5rem);
+        aspect-ratio: 1;
+        margin: 0 auto 1.25rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.07);
+        color: rgba(234, 241, 243, 0.68);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .collaborator-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .collaborator-card h3 {
+        margin: 0;
+        font-family: var(--serif);
+        font-size: clamp(1.15rem, 2vw, 1.45rem);
+        font-weight: 600;
+      }
+
+      .collaborator-name {
+        color: #eaf1f3;
+        text-decoration: none;
+        text-underline-offset: 0.25em;
+      }
+
+      .collaborator-name:hover,
+      .collaborator-name:focus-visible {
+        color: #90ced8;
+        text-decoration: underline;
+      }
+
+      .collaborator-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        margin-top: 0.8rem;
+      }
+
+      .collaborator-profile-link {
+        display: grid;
+        width: 1.75rem;
+        height: 1.75rem;
+        place-items: center;
+        border: 1px solid rgba(234, 241, 243, 0.32);
+        border-radius: 50%;
+        color: #eaf1f3;
+        text-decoration: none;
+        transition:
+          border-color 150ms ease,
+          background-color 150ms ease,
+          color 150ms ease,
+          opacity 150ms ease,
+          transform 150ms ease;
+      }
+
+      .collaborator-profile-link svg {
+        width: 0.84rem;
+        height: 0.84rem;
+        fill: currentColor;
+      }
+
+      .collaborator-profile-link:hover,
+      .collaborator-profile-link:focus-visible {
+        border-color: #eaf1f3;
+        background: #eaf1f3;
+        color: #102d3f;
+        transform: translateY(-2px);
+      }
+
+      /* Empty href values are placeholders. Add a URL to enable the icon automatically. */
+      .collaborator-profile-link[href=""] {
+        opacity: 0.34;
+        pointer-events: none;
+      }
+
+      .collaborator-icon-sprite {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      @media (max-width: 960px) {
+        .portrait-column {
+          width: min(100%, 24rem);
+          justify-self: start;
+        }
+
+        .collaborators-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 650px) {
+        .collaborators-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 440px) {
+        .collaborators-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" id="top">
+      <div class="shell header-inner">
+        <a class="wordmark" href="#home" aria-label="Ting Xiao, home">
+          <span class="wordmark-name">Ting Xiao</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#conferences">Conferences</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#collaborators">Collaborators</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+          </button>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <span class="sr-only">Open navigation</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#conferences">Conferences</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#collaborators">Collaborators</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- ============================================================
+           HERO - Edit the introduction and current role here.
+           ============================================================ -->
+      <section class="hero section" id="home" aria-labelledby="hero-title">
+        <div class="shell hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Science of science · Innovation · Computational social science</p>
+            <h1 id="hero-title">How knowledge is produced, evaluated, and diffused.</h1>
+            <p class="hero-intro">
+              Hi, I am <strong>Ting Xiao</strong>, a PhD Fellow in Sociology at the University of
+              Copenhagen. Science underpins innovation and socio-economic development, yet the production 
+              and recognition of scientific knowledge remain globally unequal. I study how 
+              scientific knowledge is produced, evaluated, and diffused within this stratified system, 
+              aiming to identify the underlying mechanisms that sustain global scientific disparities.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#publications">View publications</a>
+              <a class="button button-secondary" href="assets/Ting_Xiao_CV.pdf" download>
+                Download CV <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="portrait-column reveal delay-1">
+            <figure class="portrait-card">
+              <!-- Replace this file with your own vertical portrait (4:5 works best). -->
+              <img
+                src="assets/Ting_Xiao_Portrait.jpg"
+                alt="Portrait of Ting Xiao"
+                width="720"
+                height="900"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </figure>
+
+            <nav class="profile-links" aria-label="Academic and professional profiles">
+              <a
+                class="profile-link"
+                href="https://ting-xiao.github.io/ting-xiao/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ting Xiao's personal website (opens in a new tab)"
+                title="Personal website"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z" />
+                </svg>
+              </a>
+
+              <a
+                class="profile-link"
+                href="mailto:txo@soc.ku.dk"
+                aria-label="Email Ting Xiao"
+                title="Email"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 5h18v14H3V5Zm1.5 2v.15L12 12.2l7.5-5.05V7h-15Zm15 10V9.56L12 14.6 4.5 9.56V17h15Z" />
+                </svg>
+              </a>
+
+              <a
+                class="profile-link"
+                href="https://scholar.google.dk/citations?user=2DIjEDYAAAAJ&amp;hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ting Xiao on Google Scholar (opens in a new tab)"
+                title="Google Scholar"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3 1 9l11 6 8-4.36V17h2V9L12 3Zm0 9.72L5.74 9 12 5.58 18.26 9 12 12.72ZM6 12.18v4.07C6 18.32 8.69 20 12 20s6-1.68 6-3.75v-4.07l-6 3.27-6-3.27Z" />
+                </svg>
+              </a>
+
+              <a
+                class="profile-link"
+                href="https://orcid.org/0000-0001-8389-4270"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ting Xiao on ORCID (opens in a new tab)"
+                title="ORCID"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0ZM7.369 5.378a.947.947 0 1 1 0 1.894.947.947 0 0 1 0-1.894ZM6.647 8.416h1.444v10.041H6.647V8.416Zm3.357 0h3.903c3.303 0 4.756 2.363 4.756 5.025 0 3.019-1.875 5.016-4.747 5.016h-3.912V8.416Zm1.444 1.303v7.444h2.297c2.912 0 3.428-2.209 3.428-3.722 0-1.966-.938-3.722-3.438-3.722h-2.287Z" />
+                </svg>
+              </a>
+
+              <a
+                class="profile-link"
+                href="https://github.com/ting-xiao"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ting Xiao on GitHub (opens in a new tab)"
+                title="GitHub"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6V20c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="shell section-index" aria-hidden="true">
+          <span>01</span>
+          <span class="section-index-line"></span>
+          <span>Copenhagen, Denmark</span>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           RESEARCH - The three research streams come from the CV.
+           ============================================================ -->
+      <section class="section section-tinted" id="research" aria-labelledby="research-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="section-number">02 / Research</p>
+            <div>
+              <h2 id="research-title">Three connected lines of inquiry</h2>
+              <p>
+                Across these areas, I combine large-scale publication and patent data with advanced computational methods.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-streams">
+            <article class="stream reveal">
+              <span class="stream-number">01</span>
+              <figure class="stream-image stream-image-animated">
+                <img
+                  src="assets/knowledge-production-loop.svg"
+                  alt="Ideas and individual contributions converging into a shared network, forming a publication, and generating new knowledge"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <h3>Science, Innovation &amp; Knowledge production</h3>
+              <p>
+                I examine the academic division of labor in scientific teams, the allocation of scientific credit and recognition,
+                and the evolution of intellectual and career trajectories.
+              </p>
+            </article>
+
+            <article class="stream reveal delay-1">
+              <span class="stream-number">02</span>
+              <figure class="stream-image stream-image-animated">
+                <img
+                  src="assets/global-health-research-loop.svg"
+                  alt="Disease burden and scientific attention appearing at different scales while research connections pass through a shared agenda-setting network"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <h3>North-South scientific disparities &amp; Global burden of disease</h3>
+              <p>
+                I examine how scientific attention and research funding are distributed across 
+                countries and disease areas, focusing on agenda setting in North-South collaborations, 
+                development of national research specializations, and the correspondence between research 
+                activity and local health needs.
+              </p>
+            </article>
+
+            <article class="stream reveal delay-2">
+              <span class="stream-number">03</span>
+              <figure class="stream-image stream-image-animated">
+                <img
+                  src="assets/knowledge-spillovers-loop.svg"
+                  alt="Knowledge moving along research and economic connections between regional clusters and activating new nodes"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <h3>Knowledge spillovers &amp; Economic geography</h3>
+              <p>
+                I examine how research collaboration (co-authorship, co-invention) and 
+                cross-border economic linkages (e.g., FDI, GVCs) facilitate knowledge flows 
+                across firms, industries, and regions, shaping the geography of innovation.
+              </p>
+            </article>
+          </div>
+
+          <div class="methods-band reveal" aria-label="Research methods">
+            <p>Research toolkit</p>
+            <ul>
+              <li>Natural language processing</li>
+              <li>Machine learning</li>
+              <li>Network science</li>
+              <li>Spatial analysis</li>
+              <li>Survey experiments</li>
+              <li>Econometric modeling</li>
+              <li>Causal inference</li>
+              <li>Factor analysis</li>
+              <li>Survival analysis</li>
+              <li>Input-output analysis</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PUBLICATIONS - Add new publications by copying one <article>.
+           ============================================================ -->
+      <section class="section" id="publications" aria-labelledby="publications-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="section-number">03 / Publications</p>
+            <div>
+              <h2 id="publications-title">Peer-reviewed research</h2>
+              <p>Work spanning team science, knowledge networks, and global value chains.</p>
+              <a class="inline-download" href="assets/Ting_Xiao_Publication_List.pdf" download>
+                Download complete publication list <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="publication-list">
+            <article class="publication reveal">
+              <p class="publication-year">2026</p>
+              <div>
+                <h3>Who did what? A TF-IDF-based contribution metric for team science</h3>
+                <p class="publication-authors"><strong>Ting Xiao</strong></p>
+                <p class="publication-meta"><em>Journal of Informetrics</em>, 20(3), 101857</p>
+              </div>
+              <a
+                class="publication-link"
+                href="https://doi.org/10.1016/j.joi.2026.101857"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open publication: Who did what?"
+              >DOI <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="publication reveal">
+              <p class="publication-year">2024</p>
+              <div>
+                <h3>
+                  Structure and resilience changes of global liquefied natural gas shipping
+                  network during Russia-Ukraine conflict
+                </h3>
+                <p class="publication-authors">
+                  R. Xiao, <strong>T. Xiao</strong>, P. Zhao, M. Zhang, T. Ma &amp; S. Qiu
+                </p>
+                <p class="publication-meta"><em>Ocean &amp; Coastal Management</em>, 252, 107102</p>
+              </div>
+              <a
+                class="publication-link"
+                href="https://doi.org/10.1016/j.ocecoaman.2024.107102"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LNG shipping network publication"
+              >DOI <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="publication reveal">
+              <p class="publication-year">2024</p>
+              <div>
+                <h3>
+                  Analysis of the structure characteristics of global maritime shipping
+                  network under the Russia-Ukraine conflict
+                </h3>
+                <p class="publication-authors">
+                  P. Zhao, <strong>T. Xiao</strong>, M. Zhang, R. Xiao &amp; H. Zhang
+                </p>
+                <p class="publication-meta"><em>Areal Research and Development</em>, 43(3), 1-9 · In Chinese</p>
+              </div>
+              <span class="publication-link publication-link-muted">Article</span>
+            </article>
+
+            <article class="publication reveal">
+              <p class="publication-year">2022</p>
+              <div>
+                <h3>
+                  The structural change and influencing factors of carbon transfer network in
+                  global value chains
+                </h3>
+                <p class="publication-authors">A. Pan, <strong>T. Xiao</strong> &amp; L. Dai</p>
+                <p class="publication-meta"><em>Journal of Environmental Management</em>, 318, 115558</p>
+              </div>
+              <a
+                class="publication-link"
+                href="https://doi.org/10.1016/j.jenvman.2022.115558"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open carbon transfer networks publication"
+              >DOI <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="publication reveal">
+              <p class="publication-year">2022</p>
+              <div>
+                <h3>
+                  Global transfer of embodied energy: from source to sink through global value chains
+                </h3>
+                <p class="publication-authors">
+                  A. Pan, <strong>T. Xiao</strong>, L. Dai &amp; X. Shi
+                </p>
+                <p class="publication-meta"><em>Sustainable Production and Consumption</em>, 31, 36-51</p>
+              </div>
+              <a
+                class="publication-link"
+                href="https://doi.org/10.1016/j.spc.2022.01.030"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open embodied energy publication"
+              >DOI <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+
+          <details class="working-papers reveal">
+            <summary>
+              <span>Working papers</span>
+              <span class="summary-count"> </span>
+            </summary>
+            <ol>
+              <li>
+                <strong>T. Xiao</strong>, A. C. Herman &amp; M. W. Nielsen. “Task division and
+                authorship credit in North-South medical research collaborations.”
+              </li>
+              <li>
+                <strong>T. Xiao</strong>, A. C. Herman &amp; M. W. Nielsen. “Should I stay or
+                should I go? Fairness as a structural condition in collaboration persistence.”
+              </li>
+              <li>
+                <strong>T. Xiao</strong> &amp; A. Pan. “How does global value-chain embeddedness
+                affect green technology innovation?”
+              </li>
+              <li>
+                <strong>T. Xiao</strong> &amp; A. Pan. “Impact of cross-border M&amp;A on national
+                global value-chain position: An analysis based on the spatial Durbin model.”
+              </li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CONFERENCES - Selected conference presentations.
+           ============================================================ -->
+      <section class="section section-tinted" id="conferences" aria-labelledby="conferences-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="section-number">04 / Conferences</p>
+            <div>
+              <h2 id="conferences-title">Conference presentations</h2>
+              <p>Selected presentations in science, innovation, and network research.</p>
+            </div>
+          </div>
+
+          <div class="publication-list">
+            <article class="publication conference-entry reveal">
+              <p class="publication-year">2026</p>
+              <div>
+                <h3>Annual Conference of the International Network of Analytical Sociology (INAS)</h3>
+                <p class="publication-meta">
+                  Nuffield College, University of Oxford · Oxford, United Kingdom
+                </p>
+              </div>
+            </article>
+
+            <article class="publication conference-entry reveal">
+              <p class="publication-year">2026</p>
+              <div>
+                <h3>Open Innovation in Science Research Conference (OIS)</h3>
+                <p class="publication-meta">
+                  Copenhagen Business School · Copenhagen, Denmark
+                </p>
+              </div>
+            </article>
+
+            <article class="publication conference-entry reveal">
+              <p class="publication-year">2025</p>
+              <div>
+                <h3>International Network for Social Network Analysis (INSNA)</h3>
+                <p class="publication-meta">
+                  Sorbonne Université · Paris, France
+                </p>
+              </div>
+            </article>
+
+            <article class="publication conference-entry reveal">
+              <p class="publication-year">2025</p>
+              <div>
+                <h3>International Conference on the Science of Science and Innovation (ICSSI)</h3>
+                <p class="publication-meta">
+                  Copenhagen Business School · Copenhagen, Denmark
+                </p>
+              </div>
+            </article>
+
+            <article class="publication conference-entry reveal">
+              <p class="publication-year">2025</p>
+              <div>
+                <h3>Metascience Conference</h3>
+                <p class="publication-meta">
+                  University College London · London, United Kingdom
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           TEACHING - Keep this concise until more courses are added.
+           ============================================================ -->
+      <section class="section" id="teaching" aria-labelledby="teaching-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="section-number">05 / Teaching</p>
+            <div>
+              <h2 id="teaching-title">Quantitative methods in practice</h2>
+              <p>Teaching experience in computational and multivariate analysis.</p>
+            </div>
+          </div>
+
+          <article class="teaching-entry reveal">
+            <div>
+              <p class="teaching-date">2025-2026</p>
+              <h3>New Statistical Analysis Strategies</h3>
+              <p class="teaching-role">Teaching Assistant · University of Copenhagen</p>
+            </div>
+            <div>
+              <p class="micro-label">Course topics</p>
+              <ul class="tag-list">
+                <li>Computational text analysis</li>
+                <li>Principal component analysis</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+           COLLABORATORS - Replace names, portrait placeholders, and links.
+           ============================================================ -->
+      <section class="section section-dark" id="collaborators" aria-labelledby="collaborators-title">
+        <div class="shell">
+          <div class="section-heading section-heading-light reveal">
+            <p class="section-number">06 / Collaborators</p>
+            <div>
+              <h2 id="collaborators-title">Advisors &amp; Collaborators</h2>
+            </div>
+          </div>
+
+          <!-- Shared icon definitions for the collaborator cards. -->
+          <svg class="collaborator-icon-sprite" aria-hidden="true" focusable="false">
+            <symbol id="collab-icon-website" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z" />
+            </symbol>
+            <symbol id="collab-icon-email" viewBox="0 0 24 24">
+              <path d="M3 5h18v14H3V5Zm1.5 2v.15L12 12.2l7.5-5.05V7h-15Zm15 10V9.56L12 14.6 4.5 9.56V17h15Z" />
+            </symbol>
+            <symbol id="collab-icon-scholar" viewBox="0 0 24 24">
+              <path d="M12 3 1 9l11 6 8-4.36V17h2V9L12 3Zm0 9.72L5.74 9 12 5.58 18.26 9 12 12.72ZM6 12.18v4.07C6 18.32 8.69 20 12 20s6-1.68 6-3.75v-4.07l-6 3.27-6-3.27Z" />
+            </symbol>
+            <symbol id="collab-icon-orcid" viewBox="0 0 24 24">
+              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0ZM7.369 5.378a.947.947 0 1 1 0 1.894.947.947 0 0 1 0-1.894ZM6.647 8.416h1.444v10.041H6.647V8.416Zm3.357 0h3.903c3.303 0 4.756 2.363 4.756 5.025 0 3.019-1.875 5.016-4.747 5.016h-3.912V8.416Zm1.444 1.303v7.444h2.297c2.912 0 3.428-2.209 3.428-3.722 0-1.966-.938-3.722-3.438-3.722h-2.287Z" />
+            </symbol>
+            <symbol id="collab-icon-github" viewBox="0 0 24 24">
+              <path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6V20c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z" />
+            </symbol>
+          </svg>
+
+          <div class="collaborators-grid">
+            <article class="collaborator-card reveal">
+              <!-- Replace the span below with: <img src="assets/name.jpg" alt="Portrait of Name" /> -->
+              <div class="collaborator-avatar"><span>Photo</span></div>
+              <h3>
+                <!-- Replace # with the collaborator's personal-page URL. -->
+                <a class="collaborator-name" href="#">Mathias W. Nielsen</a>
+              </h3>
+              <!-- Fill the empty href values below when the links are available. -->
+              <div class="collaborator-links" aria-label="Profiles for Mathias W. Nielsen">
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Mathias W. Nielsen's personal website" title="Personal website">
+                  <svg aria-hidden="true"><use href="#collab-icon-website"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="mailto:mwn@soc.ku.dk" aria-label="Email Mathias W. Nielsen" title="Email">
+                  <svg aria-hidden="true"><use href="#collab-icon-email"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="https://scholar.google.com/citations?user=XbdUGEsAAAAJ&amp;hl=da" target="_blank" rel="noopener noreferrer" aria-label="Mathias W. Nielsen on Google Scholar" title="Google Scholar">
+                  <svg aria-hidden="true"><use href="#collab-icon-scholar"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Mathias W. Nielsen on ORCID" title="ORCID">
+                  <svg aria-hidden="true"><use href="#collab-icon-orcid"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Mathias W. Nielsen on GitHub" title="GitHub">
+                  <svg aria-hidden="true"><use href="#collab-icon-github"></use></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="collaborator-card reveal delay-1">
+              <!-- Replace the span below with: <img src="assets/name.jpg" alt="Portrait of Name" /> -->
+              <div class="collaborator-avatar"><span>Photo</span></div>
+              <h3>
+                <!-- Replace # with the collaborator's personal-page URL. -->
+                <a class="collaborator-name" href="#">Andrew C. Herman</a>
+              </h3>
+              <!-- Fill the empty href values below when the links are available. -->
+              <div class="collaborator-links" aria-label="Profiles for Andrew C. Herman">
+                <a class="collaborator-profile-link" href="https://andrewcherman.github.io" target="_blank" rel="noopener noreferrer" aria-label="Andrew C. Herman's personal website" title="Personal website">
+                  <svg aria-hidden="true"><use href="#collab-icon-website"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="mailto:andrew.herman@soc.ku.dk" aria-label="Email Andrew C. Herman" title="Email">
+                  <svg aria-hidden="true"><use href="#collab-icon-email"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="https://scholar.google.com/citations?user=V1t9SvsAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Andrew C. Herman on Google Scholar" title="Google Scholar">
+                  <svg aria-hidden="true"><use href="#collab-icon-scholar"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="https://orcid.org/0000-0001-7547-2481" target="_blank" rel="noopener noreferrer" aria-label="Andrew C. Herman on ORCID" title="ORCID">
+                  <svg aria-hidden="true"><use href="#collab-icon-orcid"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Andrew C. Herman on GitHub" title="GitHub">
+                  <svg aria-hidden="true"><use href="#collab-icon-github"></use></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="collaborator-card reveal delay-2">
+              <!-- Replace the span below with: <img src="assets/name.jpg" alt="Portrait of Name" /> -->
+              <div class="collaborator-avatar"><span>Photo</span></div>
+              <h3>
+                <!-- Replace # with the collaborator's personal-page URL. -->
+                <a class="collaborator-name" href="#">Rodrigo lto</a>
+              </h3>
+              <!-- Fill the empty href values below when the links are available. -->
+              <div class="collaborator-links" aria-label="Profiles for Rodrigo Ito">
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Rodrigo Ito's personal website" title="Personal website">
+                  <svg aria-hidden="true"><use href="#collab-icon-website"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="mailto:rito@soc.ku.dk" aria-label="Email Rodrigo lto" title="Email">
+                  <svg aria-hidden="true"><use href="#collab-icon-email"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Rodrigo lto on Google Scholar" title="Google Scholar">
+                  <svg aria-hidden="true"><use href="#collab-icon-scholar"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Rodrigo lto on ORCID" title="ORCID">
+                  <svg aria-hidden="true"><use href="#collab-icon-orcid"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Rodrigo lto on GitHub" title="GitHub">
+                  <svg aria-hidden="true"><use href="#collab-icon-github"></use></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="collaborator-card reveal">
+              <!-- Replace the span below with: <img src="assets/name.jpg" alt="Portrait of Name" /> -->
+              <div class="collaborator-avatar"><span>Photo</span></div>
+              <h3>
+                <!-- Replace # with the collaborator's personal-page URL. -->
+                <a class="collaborator-name" href="#">Collaborator Name 4</a>
+              </h3>
+              <!-- Fill the empty href values below when the links are available. -->
+              <div class="collaborator-links" aria-label="Profiles for Collaborator Name 4">
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 4's personal website" title="Personal website">
+                  <svg aria-hidden="true"><use href="#collab-icon-website"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" aria-label="Email Collaborator Name 4" title="Email">
+                  <svg aria-hidden="true"><use href="#collab-icon-email"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 4 on Google Scholar" title="Google Scholar">
+                  <svg aria-hidden="true"><use href="#collab-icon-scholar"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 4 on ORCID" title="ORCID">
+                  <svg aria-hidden="true"><use href="#collab-icon-orcid"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 4 on GitHub" title="GitHub">
+                  <svg aria-hidden="true"><use href="#collab-icon-github"></use></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="collaborator-card reveal delay-1">
+              <!-- Replace the span below with: <img src="assets/name.jpg" alt="Portrait of Name" /> -->
+              <div class="collaborator-avatar"><span>Photo</span></div>
+              <h3>
+                <!-- Replace # with the collaborator's personal-page URL. -->
+                <a class="collaborator-name" href="#">Collaborator Name 5</a>
+              </h3>
+              <!-- Fill the empty href values below when the links are available. -->
+              <div class="collaborator-links" aria-label="Profiles for Collaborator Name 5">
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 5's personal website" title="Personal website">
+                  <svg aria-hidden="true"><use href="#collab-icon-website"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" aria-label="Email Collaborator Name 5" title="Email">
+                  <svg aria-hidden="true"><use href="#collab-icon-email"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 5 on Google Scholar" title="Google Scholar">
+                  <svg aria-hidden="true"><use href="#collab-icon-scholar"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 5 on ORCID" title="ORCID">
+                  <svg aria-hidden="true"><use href="#collab-icon-orcid"></use></svg>
+                </a>
+                <a class="collaborator-profile-link" href="" target="_blank" rel="noopener noreferrer" aria-label="Collaborator Name 5 on GitHub" title="GitHub">
+                  <svg aria-hidden="true"><use href="#collab-icon-github"></use></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           CONTACT - Add Scholar, ORCID, or GitHub only when available.
+           ============================================================ -->
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div class="reveal">
+            <p class="section-number">07 / Contact</p>
+            <h2 id="contact-title">Interested in research on science and innovation?</h2>
+          </div>
+          <div class="contact-details reveal delay-1">
+            <p>
+              Department of Sociology<br />
+              University of Copenhagen<br />
+              Øster Farimagsgade 5<br />
+              1353 Copenhagen, Denmark
+            </p>
+            <a class="contact-email" href="mailto:txo@soc.ku.dk">txo@soc.ku.dk <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>© <span id="current-year">2026</span> Ting Xiao</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </footer>
+  </body>
+</html>

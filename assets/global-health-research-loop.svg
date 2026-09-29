@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Global health research priorities</title>
+  <desc id="desc">Disease burden and scientific attention appear at different scales while research connections pass through a shared agenda-setting network.</desc>
+
+  <style>
+    .ink { stroke: #17384d; }
+    .accent { stroke: #3f919b; }
+    .motion { display: inline; }
+    @media (prefers-reduced-motion: reduce) { .motion { display: none; } }
+  </style>
+
+  <rect width="1200" height="750" fill="#f4f1ea" />
+
+  <!-- Paired disease areas: filled circles indicate burden; rings indicate attention. -->
+  <g fill="#17384d">
+    <circle cx="260" cy="235" r="42" opacity="0.24" />
+    <circle cx="260" cy="375" r="23" opacity="0.24" />
+    <circle cx="260" cy="515" r="54" opacity="0.24" />
+  </g>
+  <g fill="none" class="accent" stroke-width="3" opacity="0.42">
+    <circle cx="940" cy="235" r="21" />
+    <circle cx="940" cy="375" r="49" />
+    <circle cx="940" cy="515" r="27" />
+  </g>
+
+  <!-- Thin comparison paths converge in a shared research-allocation network. -->
+  <g fill="none" class="ink" stroke-width="2" opacity="0.15">
+    <path d="M302 235C430 235 485 315 540 355" />
+    <path d="M283 375H540" />
+    <path d="M314 515C430 515 485 435 540 395" />
+    <path d="M660 355C730 315 805 235 919 235" />
+    <path d="M660 375H891" />
+    <path d="M660 395C730 435 805 515 913 515" />
+  </g>
+
+  <!-- Agenda setting and North-South collaboration. -->
+  <circle cx="600" cy="375" r="78" fill="#ffffff" opacity="0.44" />
+  <circle cx="600" cy="375" r="78" fill="none" class="accent" stroke-width="2" opacity="0.27" />
+  <g fill="none" class="ink" stroke-width="2" opacity="0.56">
+    <path d="M565 340L635 410M635 340L565 410M565 340H635M565 410H635" />
+  </g>
+  <g fill="#17384d">
+    <circle cx="565" cy="340" r="6" />
+    <circle cx="635" cy="340" r="6" />
+    <circle cx="565" cy="410" r="6" />
+    <circle cx="635" cy="410" r="6" />
+  </g>
+  <circle cx="600" cy="375" r="9" fill="#3f919b" />
+
+  <!-- Small paired satellites suggest cross-regional participation. -->
+  <g fill="none" class="ink" stroke-width="2" opacity="0.24">
+    <path d="M525 285C555 305 570 315 585 332" />
+    <path d="M675 465C645 445 630 435 615 418" />
+    <circle cx="510" cy="275" r="14" />
+    <circle cx="690" cy="475" r="14" />
+  </g>
+
+  <g class="motion">
+    <!-- Health needs enter the common agenda at different scales. -->
+    <circle r="10" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M260 235C430 235 485 315 600 375" keyPoints="0;0;1;1" keyTimes="0;0.07;0.36;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.11;0.33;0.36;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="6" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M260 375C430 375 500 375 600 375" keyPoints="0;0;1;1" keyTimes="0;0.13;0.42;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.13;0.17;0.39;0.42;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="13" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M260 515C430 515 485 435 600 375" keyPoints="0;0;1;1" keyTimes="0;0.19;0.48;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.19;0.23;0.45;0.48;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Shared agenda-setting pulse. -->
+    <circle cx="600" cy="375" r="44" fill="none" class="accent" stroke-width="3">
+      <animate attributeName="r" values="44;44;78;101;101" keyTimes="0;0.44;0.56;0.64;1" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0;0.82;0;0" keyTimes="0;0.44;0.51;0.64;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Scientific attention leaves the hub in a visibly different distribution. -->
+    <circle r="6" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M600 375C735 315 805 235 940 235" keyPoints="0;0;1;1" keyTimes="0;0.55;0.83;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.55;0.59;0.80;0.83;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="12" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M600 375C735 375 810 375 940 375" keyPoints="0;0;1;1" keyTimes="0;0.61;0.89;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.61;0.65;0.86;0.89;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="7" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M600 375C735 435 805 515 940 515" keyPoints="0;0;1;1" keyTimes="0;0.67;0.95;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.67;0.71;0.95;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

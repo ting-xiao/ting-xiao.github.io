@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Knowledge spillovers across regions</title>
+  <desc id="desc">Knowledge moves along research and economic connections between regional clusters, activating new firms and ideas.</desc>
+
+  <style>
+    .ink { stroke: #17384d; }
+    .accent { stroke: #3f919b; }
+    .motion { display: inline; }
+    @media (prefers-reduced-motion: reduce) { .motion { display: none; } }
+  </style>
+
+  <rect width="1200" height="750" fill="#f4f1ea" />
+
+  <!-- Three abstract regional innovation clusters. -->
+  <g fill="#ffffff" opacity="0.44">
+    <circle cx="245" cy="375" r="88" />
+    <circle cx="600" cy="375" r="88" />
+    <circle cx="955" cy="375" r="88" />
+  </g>
+  <g fill="none" class="ink" stroke-width="2" opacity="0.22">
+    <circle cx="245" cy="375" r="88" />
+    <circle cx="600" cy="375" r="88" />
+    <circle cx="955" cy="375" r="88" />
+  </g>
+
+  <!-- Firms, inventors, and research organizations within each region. -->
+  <g fill="none" class="ink" stroke-width="2" opacity="0.56">
+    <path d="M205 350L245 395L285 340M205 350L285 405M245 395L285 405" />
+    <path d="M560 340L600 385L640 345M560 410L600 385L640 410M560 340L560 410M640 345V410" />
+    <path d="M915 345L955 390L995 350M915 410L955 390L995 410M915 345L915 410M995 350V410" />
+  </g>
+  <g fill="#17384d">
+    <circle cx="205" cy="350" r="6" /><circle cx="245" cy="395" r="6" /><circle cx="285" cy="340" r="6" /><circle cx="285" cy="405" r="6" />
+    <circle cx="560" cy="340" r="6" /><circle cx="600" cy="385" r="6" /><circle cx="640" cy="345" r="6" /><circle cx="560" cy="410" r="6" /><circle cx="640" cy="410" r="6" />
+    <circle cx="915" cy="345" r="6" /><circle cx="955" cy="390" r="6" /><circle cx="995" cy="350" r="6" /><circle cx="915" cy="410" r="6" /><circle cx="995" cy="410" r="6" />
+  </g>
+
+  <!-- Upper and lower corridors distinguish overlapping channels of connection. -->
+  <g fill="none" stroke-width="2">
+    <path d="M320 330C400 255 485 255 530 330C575 255 680 255 885 330" class="accent" opacity="0.22" />
+    <path d="M320 420C410 500 485 500 530 420C575 500 680 500 885 420" class="ink" opacity="0.16" />
+    <path d="M333 375H512M688 375H867" class="ink" opacity="0.10" />
+  </g>
+
+  <!-- Potential new activity at the edge of the receiving region. -->
+  <g fill="none" class="accent" stroke-width="2" opacity="0.28">
+    <path d="M1018 320L1062 285M1028 430L1070 465" />
+    <circle cx="1070" cy="280" r="13" />
+    <circle cx="1078" cy="470" r="13" />
+  </g>
+
+  <g class="motion">
+    <!-- A research connection carries knowledge along the upper corridor. -->
+    <circle r="9" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M245 375C380 250 485 255 600 375" keyPoints="0;0;1;1" keyTimes="0;0.08;0.40;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.12;0.37;0.40;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- A cross-border economic connection travels on a second route. -->
+    <circle r="9" fill="#17384d">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M245 375C380 500 485 500 600 375" keyPoints="0;0;1;1" keyTimes="0;0.17;0.49;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;0.78;0.78;0;0" keyTimes="0;0.17;0.21;0.46;0.49;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Recombination within the middle region. -->
+    <circle cx="600" cy="375" r="48" fill="none" class="accent" stroke-width="3">
+      <animate attributeName="r" values="48;48;88;108;108" keyTimes="0;0.44;0.56;0.64;1" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0;0.82;0;0" keyTimes="0;0.44;0.51;0.64;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Recombined knowledge reaches another region through both channels. -->
+    <circle r="9" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M600 375C700 255 790 255 955 375" keyPoints="0;0;1;1" keyTimes="0;0.55;0.82;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.55;0.59;0.79;0.82;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="8" fill="#17384d">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M600 375C700 500 790 500 955 375" keyPoints="0;0;1;1" keyTimes="0;0.63;0.90;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;0.78;0.78;0;0" keyTimes="0;0.63;0.67;0.87;0.90;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Spillovers activate new nodes beyond the original cluster. -->
+    <circle r="7" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M955 375C1010 345 1040 305 1070 280" keyPoints="0;0;1;1" keyTimes="0;0.79;0.96;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.79;0.83;0.96;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="7" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M955 375C1015 405 1045 445 1078 470" keyPoints="0;0;1;1" keyTimes="0;0.83;0.99;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.83;0.87;0.99;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

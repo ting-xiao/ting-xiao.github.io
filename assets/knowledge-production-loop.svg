@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Knowledge production</title>
+  <desc id="desc">Ideas and contributions converge into a shared network, form a publication, and generate new knowledge.</desc>
+
+  <style>
+    .ink { stroke: #17384d; }
+    .accent { stroke: #3f919b; }
+    .motion { display: inline; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .motion { display: none; }
+    }
+  </style>
+
+  <rect width="1200" height="750" fill="#f4f1ea" />
+
+  <!-- Quiet structural paths remain visible when animation is reduced. -->
+  <path d="M150 375H1050" fill="none" class="ink" stroke-width="1.5" opacity="0.08" />
+  <path d="M206 255C350 255 430 315 520 365" fill="none" class="ink" stroke-width="2" opacity="0.16" />
+  <path d="M206 375C350 375 430 375 520 375" fill="none" class="ink" stroke-width="2" opacity="0.16" />
+  <path d="M206 495C350 495 430 435 520 385" fill="none" class="ink" stroke-width="2" opacity="0.16" />
+  <path d="M680 375C735 375 775 375 820 375" fill="none" class="ink" stroke-width="2" opacity="0.16" />
+
+  <!-- Existing knowledge and individual contributions. -->
+  <g fill="none" class="ink" stroke-width="2">
+    <circle cx="180" cy="255" r="26" opacity="0.32" />
+    <circle cx="180" cy="375" r="26" opacity="0.32" />
+    <circle cx="180" cy="495" r="26" opacity="0.32" />
+  </g>
+  <g fill="#17384d">
+    <circle cx="180" cy="255" r="5" opacity="0.72" />
+    <circle cx="180" cy="375" r="5" opacity="0.72" />
+    <circle cx="180" cy="495" r="5" opacity="0.72" />
+  </g>
+
+  <!-- Shared space where inputs are recombined. -->
+  <circle cx="600" cy="375" r="82" fill="#ffffff" opacity="0.46" />
+  <circle cx="600" cy="375" r="82" fill="none" class="accent" stroke-width="2" opacity="0.28" />
+  <g fill="none" class="ink" stroke-width="2" opacity="0.56">
+    <path d="M560 337L600 375L640 337M560 413L600 375L640 413M560 337L560 413M640 337L640 413" />
+  </g>
+  <g fill="#17384d">
+    <circle cx="560" cy="337" r="6" />
+    <circle cx="640" cy="337" r="6" />
+    <circle cx="560" cy="413" r="6" />
+    <circle cx="640" cy="413" r="6" />
+  </g>
+  <circle cx="600" cy="375" r="9" fill="#3f919b" />
+
+  <!-- A publication as the visible output of the process. -->
+  <g fill="none" class="ink" stroke-width="2" opacity="0.27">
+    <path d="M820 270H935L980 315V480H820Z" />
+    <path d="M935 270V315H980" />
+    <path d="M855 350H945M855 385H945M855 420H915" />
+  </g>
+
+  <!-- New knowledge feeds future work. -->
+  <path d="M980 335C1015 335 1035 310 1060 290" fill="none" class="accent" stroke-width="2" opacity="0.2" />
+  <path d="M980 415C1015 415 1035 440 1060 460" fill="none" class="accent" stroke-width="2" opacity="0.2" />
+  <circle cx="1060" cy="290" r="8" fill="#3f919b" opacity="0.55" />
+  <circle cx="1060" cy="460" r="8" fill="#3f919b" opacity="0.55" />
+
+  <!-- Three contributions travel into the shared knowledge network. -->
+  <g class="motion">
+    <circle r="8" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M180 255C350 255 430 315 600 375" keyPoints="0;0;1;1" keyTimes="0;0.08;0.38;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.12;0.34;0.38;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="8" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M180 375C350 375 430 375 600 375" keyPoints="0;0;1;1" keyTimes="0;0.14;0.44;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.14;0.18;0.40;0.44;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="8" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M180 495C350 495 430 435 600 375" keyPoints="0;0;1;1" keyTimes="0;0.20;0.50;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.24;0.46;0.50;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Recombination pulse. -->
+    <circle cx="600" cy="375" r="45" fill="none" class="accent" stroke-width="3">
+      <animate attributeName="r" values="45;45;82;104;104" keyTimes="0;0.46;0.57;0.64;1" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0;0.82;0;0" keyTimes="0;0.46;0.52;0.64;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- The result moves toward publication. -->
+    <circle r="8" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M600 375C705 375 760 375 835 375" keyPoints="0;0;1;1" keyTimes="0;0.54;0.70;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.54;0.57;0.68;0.70;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- The publication becomes fully visible. -->
+    <g fill="none" class="ink" stroke-width="3" stroke-linecap="round">
+      <path d="M820 270H935L980 315V480H820Z" stroke-dasharray="590" stroke-dashoffset="590">
+        <animate attributeName="stroke-dashoffset" values="590;590;0;0;590" keyTimes="0;0.60;0.76;0.94;1" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.60;0.64;0.94;1" dur="7s" repeatCount="indefinite" />
+      </path>
+      <path d="M855 350H945M855 385H945M855 420H915" stroke-dasharray="90" stroke-dashoffset="90">
+        <animate attributeName="stroke-dashoffset" values="90;90;0;0;90" keyTimes="0;0.68;0.80;0.94;1" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.68;0.72;0.94;1" dur="7s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    <!-- Two outputs continue into the next cycle of inquiry. -->
+    <circle r="7" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M950 350C1000 340 1030 310 1060 290" keyPoints="0;0;1;1" keyTimes="0;0.78;0.94;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.78;0.82;0.94;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle r="7" fill="#3f919b">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M950 400C1000 410 1030 440 1060 460" keyPoints="0;0;1;1" keyTimes="0;0.82;0.98;1" calcMode="linear" />
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.82;0.86;0.98;1" dur="7s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>
