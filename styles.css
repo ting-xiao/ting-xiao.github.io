@@ -548,16 +548,11 @@ p {
 
 .stream {
   min-height: 21rem;
-  padding: 2rem clamp(1.35rem, 3vw, 2.25rem) 2.2rem 0;
+  padding: 2rem 1.5rem 2.2rem;
   border-right: 1px solid var(--line);
 }
 
-.stream + .stream {
-  padding-left: clamp(1.35rem, 3vw, 2.25rem);
-}
-
 .stream:last-child {
-  padding-right: 0;
   border-right: 0;
 }
 
@@ -1017,10 +1012,9 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .stream,
-  .stream + .stream {
+  .stream {
     min-height: auto;
-    padding: 2rem 0 2.3rem;
+    padding: 2rem 1.5rem 2.3rem;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
