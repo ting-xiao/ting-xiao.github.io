@@ -390,7 +390,7 @@ p {
   margin-bottom: 1.8rem;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(3rem, 7.1vw, 3rem);
+  font-size: clamp(4rem, 7.1vw, 4rem);
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 0.98;
