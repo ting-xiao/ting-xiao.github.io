@@ -604,7 +604,7 @@ p {
 }
 
 .news-item p {
-  max-width: 47rem;
+  max-width: 60rem;
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.94rem;
