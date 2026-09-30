@@ -179,6 +179,15 @@ p {
   color: var(--accent);
 }
 
+.hero-link {
+  color: var(--accent-bright);
+  text-decoration: none;
+}
+
+.hero-link:hover {
+  color: var(--accent);
+}
+
 /* Header ================================================================== */
 
 .site-header {
