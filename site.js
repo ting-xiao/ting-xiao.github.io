@@ -38,7 +38,7 @@
     header.innerHTML = `<div class="header-inner"><a class="brand" href="index.html"${page === 'home' ? ' aria-current="page"' : ''}>Ting Xiao</a><nav class="site-nav" id="site-nav" aria-label="Primary navigation">${nav.map(([id,label,href]) => `<a href="${href}"${id===page?' aria-current="page"':''}>${label}</a>`).join('')}</nav><div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">${icons.moon}</button><button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">${icons.menu}</button></div></div>`;
   }
   const footer = document.getElementById('site-footer');
-  if (footer) footer.innerHTML = `<div class="wrapper footer-inner"><span>© 2026 Ting Xiao</span><span>Site last updated 2026-10-10</span></div>`;
+  if (footer) footer.innerHTML = `<div class="wrapper footer-inner"><span>© 2026 Ting Xiao</span><span>Last updated: October 10, 2026</span></div>`;
   const themeControl = document.querySelector('.theme-toggle');
   function setTheme(mode) {
     const applied = mode === 'dark' ? 'dark' : 'light';
