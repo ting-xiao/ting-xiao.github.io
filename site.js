@@ -30,8 +30,7 @@
     ['research','Research interests','research.html'],
     ['publications','Publications','publications.html'],
     ['work','Work in progress','work-in-progress.html'],
-    ['conferences','Conferences','conferences.html'],
-    ['cv','CV','cv.html']
+    ['conferences','Conferences','conferences.html']
   ];
   const header = document.getElementById('site-header');
   if (header) {
