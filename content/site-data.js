@@ -147,7 +147,7 @@ window.SITE_DATA = {
     },
     {
       "title": "Should I stay or should I go? Fairness as a structural condition in collaboration persistence.",
-      "authors": "T. Xiao, A. C. Herman & M. W. Nielsen",
+      "authors": "T. Xiao, A. C. Herman, Rodrigo Ito & M. W. Nielsen",
       "status": "Working paper",
       "links": []
     },
