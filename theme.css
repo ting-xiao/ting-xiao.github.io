@@ -41,6 +41,7 @@ h3{line-height:1.4}
 }
 .hero-biography{font-size:1.09rem;line-height:1.8}
 .hero-biography p{margin:0}
+.hero-biography p + p{margin-top:1rem}
 .hero-biography a{font-weight:600}
 .portrait-wrap{margin:6px 0 0;width:100%;max-width:274px;overflow:hidden;background:var(--paper-alt);border-radius:3px}
 .portrait-wrap img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top}
