@@ -95,7 +95,7 @@
       <div class="home-content">
         <section class="hero-intro" aria-labelledby="welcome-title">
           <h1 id="welcome-title">Ting Xiao</h1>
-          <div class="hero-biography"><p>${profile.bioHtml}</p></div>
+          <div class="hero-biography">${profile.bioHtml}</div>
         </section>
         <section class="news-section" aria-labelledby="news-heading">
           <div class="section-head"><h2 id="news-heading">News</h2></div>
