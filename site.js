@@ -19,6 +19,7 @@
     menu: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
     website: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-8h6v8"/></svg>',
+    university: '<span aria-hidden="true" style="display:block;width:18px;height:18px;flex:0 0 18px;background-color:currentColor;-webkit-mask:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAA8klEQVR42u2WTQ6CMBBGXw2JJsAtTPQQLjyGB9FED+E51GO48A5uPAVsXI0bmlTkpxRoXTAJISmlj286H1MlIoSImeN7e0CK6+iygOqoOAfimmdvYDGk4sRQFzfMmxvzkj5gnc7MIZNZ2zZUpTpvUaYjNSBt8bMNGpw4KFPFvastUiCPOnx1OdaOjsgApRX7NrPSxXXwCD2Vi2sHXEaGpkXxftnpCtxGhJ411OXPNVhEFWNSYx2xtJNqWKN3kwjWnSbwBJ7A/wOOLOeJ5Zh1izUVb0buywJsy03iCaw8ZfkFLIOfQIJVtQLuHngP3R6DHQQ+5V5IyVwgsCYAAAAASUVORK5CYII=) center/contain no-repeat;mask:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAA8klEQVR42u2WTQ6CMBBGXw2JJsAtTPQQLjyGB9FED+E51GO48A5uPAVsXI0bmlTkpxRoXTAJISmlj286H1MlIoSImeN7e0CK6+iygOqoOAfimmdvYDGk4sRQFzfMmxvzkj5gnc7MIZNZ2zZUpTpvUaYjNSBt8bMNGpw4KFPFvastUiCPOnx1OdaOjsgApRX7NrPSxXXwCD2Vi2sHXEaGpkXxftnpCtxGhJ411OXPNVhEFWNSYx2xtJNqWKN3kwjWnSbwBJ7A/wOOLOeJ5Zh1izUVb0buywJsy03iCaw8ZfkFLIOfQIJVtQLuHngP3R6DHQQ+5V5IyVwgsCYAAAAASUVORK5CYII=) center/contain no-repeat"></span>',
     orcid: '<svg class="icon-filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0ZM7.369 5.378a.947.947 0 1 1 0 1.894.947.947 0 0 1 0-1.894ZM6.647 8.416h1.444v10.041H6.647V8.416Zm3.357 0h3.903c3.303 0 4.756 2.363 4.756 5.025 0 3.019-1.875 5.016-4.747 5.016h-3.912V8.416Zm1.444 1.303v7.444h2.297c2.912 0 3.428-2.209 3.428-3.722 0-1.966-.938-3.722-3.438-3.722h-2.287Z"/></svg>',
     mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>',
     github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.9c0-1.1-.4-1.9-.9-2.4 3-.4 6.2-1.5 6.2-6.8a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.7s-1.2-.3-3.8 1.5a13 13 0 0 0-7 0C5.3 1.2 4.1 1.5 4.1 1.5A5 5 0 0 0 4 5.2a5.4 5.4 0 0 0-1.5 3.7c0 5.3 3.2 6.4 6.2 6.8-.5.5-.9 1.3-.9 2.4V22"/></svg>',
@@ -71,7 +72,7 @@
   const heading = (title, intro = '') => `<div class="page-top"><h1>${escapeHTML(title)}</h1>${intro ? `<p class="page-intro">${escapeHTML(intro)}</p>` : ''}</div>`;
   function profiles() {
     const profileLinks = [
-      [profile.website, 'Personal website', icons.website],
+      ['https://www.ku.dk/en', 'University of Copenhagen', icons.university],
       ['mailto:' + profile.email, 'Email', icons.mail],
       [profile.scholar, 'Google Scholar', icons.scholar],
       [profile.orcid, 'ORCID', icons.orcid],
