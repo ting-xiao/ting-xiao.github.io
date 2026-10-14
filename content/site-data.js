@@ -65,7 +65,7 @@ window.SITE_DATA = {
     }
   ],
   "methods": [
-    "Natural language processing",
+    "Computational text analysis",
     "Machine learning",
     "Network science",
     "Spatial analysis",
