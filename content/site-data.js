@@ -44,21 +44,21 @@ window.SITE_DATA = {
   "research": [
     {
       "title": "Science, Innovation & Knowledge production",
-      "description": "I examine the academic division of labor in scientific teams, the allocation of scientific credit and recognition, and the evolution of intellectual and career trajectories.",
+      "description": "I'm interested in studying the academic division of labor in scientific teams, the allocation of scientific credit and recognition, and the evolution of intellectual and career trajectories.",
       "image": "assets/knowledge-production-loop.svg",
       "imageDark": "assets/knowledge-production-loop-dark.svg",
       "imageAlt": "Ideas and individual contributions converging into a shared network, forming a publication, and generating new knowledge"
     },
     {
       "title": "North-South scientific disparities & Global burden of disease",
-      "description": "I examine how scientific attention and research funding are distributed across countries and disease areas, focusing on agenda setting in North-South collaborations, development of national research specializations, and the correspondence between research activity and local health needs.",
+      "description": "I'm interested in studying how scientific attention and research funding are distributed across countries and disease areas, focusing on agenda setting in North-South collaborations, development of national research specializations, and the correspondence between research activity and local health needs.",
       "image": "assets/global-health-research-loop.svg",
       "imageDark": "assets/global-health-research-loop-dark.svg",
       "imageAlt": "Disease burden and scientific attention appearing at different scales while research connections pass through a shared agenda-setting network"
     },
     {
       "title": "Knowledge spillovers & Economic geography",
-      "description": "I examine how research collaboration (co-authorship, co-invention) and cross-border economic linkages (e.g., FDI, GVCs) facilitate knowledge flows across firms, industries, and regions, shaping the geography of innovation.",
+      "description": "I'm interested in studying how research collaboration (co-authorship, co-invention) and cross-border economic linkages (e.g., FDI, GVCs) facilitate knowledge flows across firms, industries, and regions, shaping the geography of innovation.",
       "image": "assets/knowledge-spillovers-loop.svg",
       "imageDark": "assets/knowledge-spillovers-loop-dark.svg",
       "imageAlt": "Knowledge moving along research and economic connections between regional clusters and activating new nodes"
