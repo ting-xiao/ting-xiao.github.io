@@ -132,21 +132,8 @@ body[data-page="home"] .main{padding-top:clamp(32px,calc(7vw - 20px),62px)}
 @media print{.site-header,.footer,.cv-cta,.profile-contact-list{display:none!important}.main{padding:0}.wrapper,.wrapper.narrow{width:100%}body{background:white!important;color:black!important}.stream-image .illustration-dark{display:none!important}.stream-image .illustration-light{display:block!important}}
 
 /* List/research pages intentionally start with content, without heading or overline. */
-body[data-page="research"] .main,body[data-page="publications"] .main,body[data-page="work"] .main,body[data-page="conferences"] .main,body[data-page="references"] .main{padding-top:clamp(38px,5.5vw,62px)}
-@media(max-width:720px){body[data-page="research"] .main,body[data-page="publications"] .main,body[data-page="work"] .main,body[data-page="conferences"] .main,body[data-page="references"] .main{padding-top:36px}}
+body[data-page="research"] .main,body[data-page="publications"] .main,body[data-page="work"] .main,body[data-page="conferences"] .main{padding-top:clamp(38px,5.5vw,62px)}
+@media(max-width:720px){body[data-page="research"] .main,body[data-page="publications"] .main,body[data-page="work"] .main,body[data-page="conferences"] .main{padding-top:36px}}
 
 /* Headings remain available to screen readers, without reintroducing visible title blocks. */
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-
-
-/* References — three compact cards matching the site's light/dark palette. */
-.references-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:20px}
-.reference-card{display:flex;flex-direction:column;min-width:0;padding:24px 22px;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
-.reference-card h2{font:700 1.12rem/1.4 var(--font);letter-spacing:0;margin:0 0 13px;color:var(--text)}
-.reference-affiliation{font-size:.94rem;line-height:1.55;color:var(--muted);margin:0 0 18px;overflow-wrap:anywhere}
-.reference-card-links{margin-top:auto;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.reference-email{font-size:.93rem;overflow-wrap:anywhere}
-.reference-scholar{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:600}
-.reference-scholar svg{height:19px;width:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round;flex-shrink:0}
-@media(max-width:900px){.references-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.references-grid{grid-template-columns:1fr;gap:14px}.reference-card{padding:20px}}
