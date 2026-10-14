@@ -7,7 +7,7 @@ window.SITE_DATA = {
     "name": "Ting Xiao",
     "greeting": "Ting Xiao",
     "role": "",
-    "bioHtml": "<p>Hi, I am a PhD Fellow in Sociology at the University of Copenhagen, fortunate to be advised by <a href=\"https://scholar.google.com/citations?user=XbdUGEsAAAAJ&amp;hl=da\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Mathias W. Nielsen</a> and <a href=\"https://scholar.google.com/citations?user=V1t9SvsAAAAJ\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Andrew C. Herman</a>. Science underpins innovation and socio-economic development, yet the production and recognition of scientific knowledge remain globally unequal. I study how scientific knowledge is produced, evaluated, and diffused within this stratified system, aiming to identify the underlying mechanisms that sustain global scientific disparities.</p>",
+    "bioHtml": "<p>Hi, I am a PhD Fellow in Sociology at the University of Copenhagen, fortunate to be advised by <a href=\"https://scholar.google.com/citations?user=XbdUGEsAAAAJ&amp;hl=da\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Mathias W. Nielsen</a> and <a href=\"https://scholar.google.com/citations?user=V1t9SvsAAAAJ\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Andrew C. Herman</a>. Science underpins innovation and socio-economic development, yet the production and recognition of scientific knowledge remain deeply unequal across the globe. I study how scientific knowledge is produced, evaluated, and diffused within this stratified system, aiming to identify the underlying mechanisms that sustain global scientific disparities.</p>",
     "photo": "assets/ting-xiao-portrait.webp",
     "photoAlt": "Portrait of Ting Xiao",
     "email": "txo@soc.ku.dk",
