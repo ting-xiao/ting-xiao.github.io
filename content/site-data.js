@@ -51,7 +51,7 @@ window.SITE_DATA = {
     },
     {
       "title": "North-South scientific disparities & Global burden of disease",
-      "description": "I'm interested in studying how scientific attention and research funding are distributed across countries and disease areas, focusing on agenda setting in North-South collaborations, development of national research specializations, and the correspondence between research activity and local health needs.",
+      "description": "Most of my recent work focuses on detecting and characterizing global scientific disparities. I’m interested in how scientific attention (e.g., publications, citations) and research funding are distributed across countries and disease areas, shaping national research specializations and the alignment between research activity and local disease burden.",
       "image": "assets/global-health-research-loop.svg",
       "imageDark": "assets/global-health-research-loop-dark.svg",
       "imageAlt": "Disease burden and scientific attention appearing at different scales while research connections pass through a shared agenda-setting network"
