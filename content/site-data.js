@@ -190,5 +190,28 @@ window.SITE_DATA = {
       "title": "Metascience Conference",
       "details": "University College London · London, United Kingdom"
     }
+  ],
+  "references": [
+    {
+      "name": "Prof. Mathias W. Nielsen",
+      "department": "Department of Sociology",
+      "university": "University of Copenhagen",
+      "email": "mwn@soc.ku.dk",
+      "scholar": "https://scholar.google.com/citations?user=XbdUGEsAAAAJ&hl=da"
+    },
+    {
+      "name": "Prof. Andrew C. Herman",
+      "department": "Department of Sociology",
+      "university": "University of Copenhagen",
+      "email": "andrew.herman@soc.ku.dk",
+      "scholar": "https://scholar.google.com/citations?user=V1t9SvsAAAAJ"
+    },
+    {
+      "name": "Prof. James A. Evans",
+      "department": "Department of Sociology",
+      "university": "University of Chicago",
+      "email": "jevans@uchicago.edu",
+      "scholar": "https://scholar.google.dk/citations?user=kV4N4zoAAAAJ&hl=en&oi=sra"
+    }
   ]
 };
