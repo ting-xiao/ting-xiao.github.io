@@ -44,14 +44,14 @@ window.SITE_DATA = {
   "research": [
     {
       "title": "Science, Innovation & Knowledge production",
-      "description": "I'm interested in studying the academic division of labor in scientific teams, the allocation of scientific credit and recognition, and the evolution of intellectual and career trajectories.",
+      "description": "I'm interested in studying how scientific ideas emerge, develop, and recombine, and how researchers explore new intellectual directions over the course of their scientific careers.",
       "image": "assets/knowledge-production-loop.svg",
       "imageDark": "assets/knowledge-production-loop-dark.svg",
       "imageAlt": "Ideas and individual contributions converging into a shared network, forming a publication, and generating new knowledge"
     },
     {
       "title": "North-South scientific disparities & Global burden of disease",
-      "description": "I'm interested in how scientific attention and research funding are distributed across countries and disease areas, shaping national research specializations and the alignment between research activity and local disease burden.",
+      "description": "I'm interested in studying how scientific attention and research funding are distributed across countries and disease areas, shaping national research specializations and the alignment between research activity and local disease burden.",
       "image": "assets/global-health-research-loop.svg",
       "imageDark": "assets/global-health-research-loop-dark.svg",
       "imageAlt": "Disease burden and scientific attention appearing at different scales while research connections pass through a shared agenda-setting network"
