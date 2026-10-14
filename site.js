@@ -30,7 +30,8 @@
     ['research','Research interests','research.html'],
     ['publications','Publications','publications.html'],
     ['work','Work in progress','work-in-progress.html'],
-    ['conferences','Conferences','conferences.html']
+    ['conferences','Conferences','conferences.html'],
+    ['references','References','references.html']
   ];
   const header = document.getElementById('site-header');
   if (header) {
@@ -124,6 +125,17 @@
     const rows=(d.conferences || []).map(c=>`<article class="conference"><span class="conference-date">${escapeHTML(c.date)}</span><div><h2>${escapeHTML(c.title)}</h2><p>${escapeHTML(c.details)}</p></div></article>`).join('');
     return `<h1 class="sr-only">Conferences</h1><div class="conference-list">${rows}</div>`;
   }
+
+  function references() {
+    const cards = (d.references || []).map(r => {
+      const emailAddress = safeUrl('mailto:' + r.email);
+      const scholarAddress = safeUrl(r.scholar);
+      const emailLink = emailAddress ? '<a class="reference-email" href="' + escapeHTML(emailAddress) + '">' + escapeHTML(r.email) + '</a>' : '';
+      const scholarLink = scholarAddress ? '<a class="reference-scholar" href="' + escapeHTML(scholarAddress) + '" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile for ' + escapeHTML(r.name) + '">' + icons.scholar + '<span>Google Scholar</span></a>' : '';
+      return '<article class="reference-card"><h2>' + escapeHTML(r.name) + '</h2><p class="reference-affiliation">' + escapeHTML(r.department) + '<br>' + escapeHTML(r.university) + '</p><div class="reference-card-links">' + emailLink + scholarLink + '</div></article>';
+    }).join('');
+    return '<h1 class="sr-only">References</h1><div class="references-grid">' + cards + '</div>';
+  }
   function cv() {
     const subjects=(d.research||[]).map(r=>`<li>${escapeHTML(r.title)}</li>`).join('');
     const papers=(d.publications||[]).slice(0,3).map(p=>`<li><span>${escapeHTML(p.year)}</span> ${escapeHTML(p.title)}</li>`).join('');
@@ -134,5 +146,5 @@
     <section class="cv-section"><h2>Methods</h2><div class="method-chips">${(d.methods||[]).map(m=>`<span>${escapeHTML(m)}</span>`).join('')}</div></section>
     <section class="cv-section cv-contact"><h2>Contact</h2><p>${(profile.address||[]).map(a=>escapeHTML(a)).join('<br>')}</p><p>${link('mailto:'+profile.email,profile.email,'cv-secondary-link',false)} · ${link(profile.scholar,'Google Scholar','cv-secondary-link')} · ${link(profile.orcid,'ORCID','cv-secondary-link')}</p></section>`;
   }
-  main.innerHTML = ({home,research,publications:papers,work,conferences,cv}[page] || home)();
+  main.innerHTML = ({home,research,publications:papers,work,conferences,references,cv}[page] || home)();
 })();
