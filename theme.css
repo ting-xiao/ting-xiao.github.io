@@ -32,6 +32,9 @@ h3{line-height:1.4}
 .theme-toggle svg,.menu-toggle svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .menu-toggle{display:none}
 .main{padding:clamp(48px,7vw,82px) 0 110px;flex:1}
+/* Keep the home title and portrait aligned while reducing only the home page's top whitespace. */
+body[data-page="home"] .main{padding-top:clamp(32px,calc(7vw - 20px),62px)}
+@media(max-width:720px){body[data-page="home"] .main{padding-top:30px}}
 /* Home: biography and news left, portrait and a six-row contact list right. */
 .home-grid{display:grid;grid-template-columns:minmax(0,1fr) 274px;gap:clamp(42px,6vw,86px);align-items:start}
 .home-content,.home-aside{min-width:0}
